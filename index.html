@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Author: Jay Patel, 000881881 -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="./script.js" defer></script>
+<title>Fisher Man</title>
+</head>
+<body>
+<div id="main">
+  <header><h2>FISHERMAN</h2></header>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <svg id="canvas" width="1100" height="800" style="border: 2px solid black;">
+          <!-- sky -->
+          <rect id="sky" x="0" y="0" width="1100" height="400" fill="#AED6F1"></rect>  
+          <!-- sun -->
+          <circle id="sun" cx="100" cy="100" r="50" fill="yellow"></circle>
+          <!-- sea -->
+          <rect x="0" y="400" width="1100" height="400" fill="#3EA6FF"></rect>
+          <!-- ship base -->
+          <polygon points="300,500 800,500 740,580 330,580" fill="#081438"></polygon>
+          <!-- chimney base -->
+          <polygon points="320,450 500,450 500,500 320,500" fill="#ABB2B9"></polygon>
+          <!-- chimney -->
+          <polygon points="325,420 360,420 360,450 325,450" fill="#BA4A00"> </polygon>
+          <polygon points="370,435 405,435 405,450 370,450" fill="#BA4A00"> </polygon>
+          <polygon points="415,435 450,435 450,450 415,450" fill="#BA4A00"> </polygon>
+          <polygon points="460,435 495,435 495,450 460,450" fill="#BA4A00"> </polygon>
+          <!-- blue circle -->
+          <circle cx="804" cy="470" r="15" fill="#1E4273"></circle>
+          <!-- cabin -->
+          <polygon points="550,475 820,475 800,500 530,500" fill="#ABB2B9"></polygon>
+          <polygon points="550,400 750,400 750,475 550,475" fill="#D0D3D4"></polygon>
+          <polygon points="540,390 760,390 760,400 540,400" fill="#081438"></polygon>
+          <!-- windows -->
+          <polygon id="window1" points="600,410 630,410 630,450 600,450" fill="#27EDED"></polygon>
+          <polygon id="window2" points="650,410 710,410 710,450 650,450" fill="#27EDED"></polygon>
+          <!-- bars -->
+          <line x1="650" y1="390" x2="650" y2="190" stroke-width="5" stroke="#081438"></line>
+          <line x1="640" y1="195" x2="660" y2="195" stroke-width="5" stroke="#081438"></line>
+          <line x1="550" y1="410" x2="400" y2="410" stroke-width="5" stroke="#081438"></line>
+          <line x1="550" y1="410" x2="420" y2="250" stroke-width="5" stroke="#081438"></line>
+          <!-- ropes -->
+          <line x1="804" y1="470" x2="650" y2="220" stroke-width="2" stroke="#081438"></line>
+          <line x1="420" y1="250" x2="650" y2="220" stroke-width="2" stroke="#081438"></line>
+          <line x1="340" y1="420" x2="420" y2="250" stroke-width="2" stroke="#081438"></line>
+          <line x1="650" y1="280" x2="460" y2="300" stroke-width="2" stroke="#081438"></line>
+          <line x1="400" y1="410" x2="460" y2="300" stroke-width="2" stroke="#081438"></line>
+          <line x1="400" y1="410" x2="340" y2="420" stroke-width="2" stroke="#081438"></line>
+          <line x1="650" y1="280" x2="804" y2="470" stroke-width="2" stroke="#081438"></line>
+          <!-- grill -->
+          <line x1="300" y1="480" x2="530" y2="480" stroke-width="5" stroke="#081438"></line>
+          <line x1="305" y1="480" x2="305" y2="500" stroke-width="5" stroke="#081438"></line>
+          <line x1="346" y1="480" x2="346" y2="500" stroke-width="5" stroke="#081438"></line>
+          <line x1="392" y1="480" x2="392" y2="500" stroke-width="5" stroke="#081438"></line>
+          <line x1="438" y1="480" x2="438" y2="500" stroke-width="5" stroke="#081438"></line>
+          <line x1="484" y1="480" x2="484" y2="500" stroke-width="5" stroke="#081438"></line>
+          <line x1="525" y1="480" x2="525" y2="500" stroke-width="5" stroke="#081438"></line>
+          <!-- man -->
+          <circle cx="325" cy="430" r="15" fill="#FCF2E1"></circle>
+          <polygon points="310,445 340,445 340,475 310,475" fill="pink"></polygon>
+          <!-- legs -->
+          <polygon points="310,470 325,470 315,500 310,500" fill="#21618C"></polygon>
+          <polygon points="325,470 340,470 340,500 335,500" fill="#21618C"></polygon>
+          <!-- hands -->
+          <line x1="310" y1="445" x2="290" y2="460" stroke-width="5" stroke="#081438"></line>
+          <line x1="340" y1="445" x2="290" y2="460" stroke-width="5" stroke="#081438"></line>
+          <line x1="240" y1="435" x2="290" y2="460" stroke-width="7" stroke="#081438"></line>
+          <circle cx="280" cy="450" r="5" fill="#081438"></circle>
+          <line x1="242" y1="435" x2="240" y2="750" stroke-width="2" stroke="#081438"></line>
+          <!-- try -->
+          <!-- <polygon id="fish" points="240,640 280,670 300,650 280,630 240,660" fill="#FBDA00"></polygon> -->
+          <!-- Trap area -->
+          <!-- <polygon points="200,780 280,780 280,435 200,435" stroke-opacity =0 ></polygon> -->
+          </svg>
+        
+          <div class="scoreButton">
+            <p>
+            <button id="catch">Catch</button>
+            Fishes: <span id="score">0</span>
+            </p>
+          </div>
+        
+          <div class="scene">
+            <p>Scenes: 
+            <button id="button1" onclick="morning()">Morning</button>
+            <button id="button2" onclick="noon()">Noon</button>
+            <button id="button3" onclick="evening()">Evening</button>
+            <button id="button4" onclick="night()">Night</button>
+            <button id="button5" onclick="run()">Auto</button></p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="info">
+          <h3>What to do:</h3>
+          <div>1. You have catch Black fishes as many as you can to boost your score.</div>
+          <div>2. Try not to catch Red fish Otherwise you will lose 5 points.</div>
+          <div>3. If your score gets less then 0 then game is over and it will start agian by it-self.</div>
+        
+          <h3>Controls:</h3>
+          <div>In this game you have 3 options to catch fish if fish is nearby fish trap:</div>
+          <div>1. By clicking on Canvas</div>
+          <div>2. By clicking "Catch" button</div>
+          <div>3. By pressing Space bar</div>
+
+          <h3>Scenario:</h3>
+          <div>You can select any scene from options. If you select "Auto" game will run scenario by it-self.</div>
+          
+        </div>      
+      </div>
+    </div>
+  </div>
+
+  <footer>&copy;  2023, Jay Patel, Mohawk College</footer>
+</div>
+</body>
+</html>

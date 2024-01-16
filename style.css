@@ -1,0 +1,43 @@
+/* Author: Jay Patel, 000881881 */
+
+#main{
+    background-color: black;
+}
+
+header{
+    color: white;
+    text-align: center;
+    border-bottom: 2px solid grey;
+    margin-bottom: 20px;}
+
+.scene, .scoreButton {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: larger;
+}
+
+#button1, #button2, #button3, #button4, #button5{
+    margin: 10px;
+    background-color: #ABB2B9;
+}
+
+#catch{margin: 10px;
+    background-color: #ABB2B9;}
+
+button:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.info{color: white;
+}
+
+footer{
+    text-align: center;
+    color: white;
+    border-top: 2px solid grey;
+    margin-top: 20px;
+    padding-bottom: 30px;}
+
+      
